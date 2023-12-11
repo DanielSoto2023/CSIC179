@@ -92,11 +92,18 @@ def printdivide(len):
     print()
 
     
-    
+errorcatcher = True
 #gather input
-widthlist = int(input("Input the width of the array"))
-heightlist = int(input("Input the height of the array"))
-print()
+while errorcatcher == True:
+    try:
+        widthlist = int(input("Input the width of the array"))
+        heightlist = int(input("Input the height of the array"))
+        if (widthlist < 1) or (heightlist < 1):
+            raise Exception("Numbers below 1 are not accepted")
+        print()
+        errorcatcher = False
+    except:
+        print("You did not enter a number")
 
 #makes array
 myarray = makelist(widthlist,heightlist)
